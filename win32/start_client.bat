@@ -32,16 +32,11 @@ set GAME_INGAME_UPGRADE=http://www.piratesrewritten.com/
 set GAME_INGAME_MOREINFO=http://www.piratesrewritten.com/help
 set GAME_INGAME_NAMING=http://www.piratesrewritten.com/piratecode/
 
-rem PlayToken input
-set /P POR_TOKEN=Token (Default: dev): || ^
-set POR_TOKEN=dev
-
 rem Choose correct python command to execute the game
 set PYTHON_CMD=ppython
 
 echo ====================================
 echo Starting Pirates Online Rewritten...
-echo Token: %POR_TOKEN%
 echo Gameserver: %POR_GAMESERVER%
 echo PPython: %PYTHON_CMD%
 echo ====================================
