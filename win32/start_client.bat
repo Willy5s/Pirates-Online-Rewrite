@@ -33,18 +33,18 @@ set GAME_INGAME_MOREINFO=http://www.piratesrewritten.com/help
 set GAME_INGAME_NAMING=http://www.piratesrewritten.com/piratecode/
 
 rem Choose correct python command to execute the game
-set PYTHON_CMD=ppython
+set PYTHON_CMD=python
 
 echo ====================================
 echo Starting Pirates Online Rewritten...
 echo Gameserver: %POR_GAMESERVER%
-echo PPython: %PYTHON_CMD%
+echo Python: %PYTHON_CMD%
 echo ====================================
 
 cd ../
 
 rem Start the game using the PYTHON_CMD variable
 :main
-%PYTHON_CMD% -m pirates.piratesbase.PiratesStart
+%PYTHON_CMD% -m pirate.piratebase.PirateStart
 pause
 goto :main
