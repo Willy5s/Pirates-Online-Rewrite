@@ -45,6 +45,6 @@ cd ../
 
 rem Start the game using the PYTHON_CMD variable
 :main
-%PYTHON_CMD% -m pirate.piratebase.PirateStart
+%PYTHON_CMD% -m pirate.piratesbase.PirateStart
 pause
 goto :main
