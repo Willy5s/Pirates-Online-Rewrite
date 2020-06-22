@@ -1,11 +1,7 @@
 print('PiratesStart: Starting the game.')
-import __builtin__
 
-class game():
-    name = 'pirates'
-    process = 'client'
-
-__builtin__.game = game()
+name = 'pirates'
+process = 'client'
 
 import time
 import os
@@ -26,7 +22,6 @@ except:
     print('Creating PiratesDummyLauncher')
     from pirates.launcher.PiratesDummyLauncher import PiratesDummyLauncher
     launcher = PiratesDummyLauncher()
-    __builtin__.launcher = launcher
 
 from direct.gui import DirectGuiGlobals
 import PiratesGlobals
