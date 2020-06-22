@@ -1,12 +1,12 @@
 @echo off
-title Pirates Online Rewritten - UberDOG
+title Pirates Online Rewrite - UberDOG
 cd ../../
 
 rem Choose correct python command to execute the game
 set PYTHON_CMD=ppython
 
 echo ============================================
-echo Starting Pirates Online Rewritten UberDOG...
+echo Starting Pirates Online Rewrite UberDOG...
 echo PPython: %PYTHON_CMD%
 echo ============================================
 
