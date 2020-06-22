@@ -21,7 +21,7 @@ else:
 
 found = vfs.resolveFilename(filename, searchPath)
 if not found:
-    print 'DropGlobals.pkl file not found: %s' % filename.cStr()
+    print('DropGlobals.pkl file not found: %s' % filename.cStr())
 data = vfs.readFile(filename, 1)
 __dropInfo = cPickle.loads(data)
 __lootDropCache = {}
@@ -32,17 +32,17 @@ filenameDrops = Filename('CommonDrops.pkl')
 searchPathDrops = DSearchPath()
 foundDrops = vfs.resolveFilename(filenameDrops, searchPath)
 if not foundDrops:
-    print 'CommonDrops.pkl file not found: %s' % filenameDrops.cStr()
+    print('CommonDrops.pkl file not found: %s' % filenameDrops.cStr())
 commonDropData = vfs.readFile(filenameDrops, 1)
 __commonDropInfo = cPickle.loads(commonDropData)
 __staticIdTypeList = {}
 for heading, value in __columnHeadings.items():
     try:
         newHeading = string.replace(heading, '\r', '')
-        exec '%s = %s' % (newHeading, value) in globals()
+        exec('%s = %s' % (newHeading, value) in globals())
     except:
         newHeading = string.replace(heading, '\r', '')
-        exec "__staticIdTypeList['%s'] = %s" % (newHeading, value) in globals()
+        exec("__staticIdTypeList['%s'] = %s" % (newHeading, value) in globals())
 
 __staticCommonDropList = {}
 __typeCommonDropList = {}
@@ -54,17 +54,17 @@ for heading, value in __commonDropInfo.items():
     try:
         newHeading = string.replace(heading, '\r', '')
         id = None
-        exec 'id = (AvatarTypes.%s.getFaction(), AvatarTypes.%s.getTrack(), AvatarTypes.%s.getId())' % (heading, heading, heading)
-        exec '__typeCommonDropList[id] = %s' % value in globals()
+        exec('id = (AvatarTypes.%s.getFaction(), AvatarTypes.%s.getTrack(), AvatarTypes.%s.getId())' % (heading, heading, heading))
+        exec('__typeCommonDropList[id] = %s' % value in globals())
     except:
         newHeading = string.replace(heading, '\r', '')
-        exec "__staticCommonDropList['%s'] = %s" % (newHeading, value) in globals()
+        exec("__staticCommonDropList['%s'] = %s" % (newHeading, value) in globals())
 
 filenameShipMaterialDrops = Filename('ShipMaterialDrops.pkl')
 searchPathDrops = DSearchPath()
 foundShipMaterialDrops = vfs.resolveFilename(filenameShipMaterialDrops, searchPath)
 if not foundShipMaterialDrops:
-    print 'ShipMaterialDrops.pkl file not found: %s' % filenameDrops.cStr()
+    print('ShipMaterialDrops.pkl file not found: %s' % filenameDrops.cStr())
 shipMaterialDropData = vfs.readFile(filenameShipMaterialDrops, 1)
 __shipMaterialDropInfo = cPickle.loads(shipMaterialDropData)
 __shipMaterialDropList = {}
@@ -78,7 +78,7 @@ for heading, value in __shipMaterialDropInfo.items():
         entryValue = 0
     if hasattr(ShipGlobals, heading):
         newHeading = string.replace(heading, '\r', '')
-        exec '__shipMaterialDropList[ShipGlobals.%s] = %s' % (newHeading, entryValue) in globals()
+        exec('__shipMaterialDropList[ShipGlobals.%s] = %s' % (newHeading, entryValue) in globals())
 
 del searchPath
 del __columnHeadings
