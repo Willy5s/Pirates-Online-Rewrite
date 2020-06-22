@@ -82,10 +82,10 @@ class UserFunnel:
             response_dict = None
 
         if not isinstance(status_code, (long, int)) and self.GetBool('want-dev', __dev__):
-            print "---- Submit Init ERROR ----"
-            print "URL: " + str(url_init)
-            print "Payload JSON: " + str(init_payload_json)
-            print "Headers: " + str(headers)          
+            print("---- Submit Init ERROR ----")
+            print("URL: " + str(url_init))
+            print("Payload JSON: " + str(init_payload_json))
+            print("Headers: " + str(headers))
 
         response_string = ('' if status_code is None else 'Returned: ' + str(status_code) + ' response code.')
 
@@ -98,11 +98,11 @@ class UserFunnel:
         if status_code != 200:
             self.notify.warning('Failed to initialize; %s' % status_code)
             if self.GetBool('want-dev', __dev__):
-                print response_string
+                print(response_string)
                 if isinstance(response_dict, dict):
-                    print response_dict
+                    print(response_dict)
                 elif isinstance(init_response.text, basestring):
-                    print 'Response contents: %s' % init_response.text
+                    print('Response contents: %s' % init_response.text)
             return (None, None)
 
         if 'server_ts' not in response_dict or not isinstance(response_dict['server_ts'], (int, long)):
@@ -281,11 +281,11 @@ class UserFunnel:
         if status_code != 200:
             self.notify.warning('Failed to submit events; %s' % status_code)
             if self.GetBool('want-dev', __dev__):
-                print response_string
+                print(response_string)
                 if isinstance(response_dict, dict):
-                    print response_dict
+                    print(response_dict)
                 elif isinstance(init_response.text, basestring):
-                    print 'Response contents: %s' % init_response.text
+                    print('Response contents: %s' % init_response.text)
             return (None, None)
 
         if status_code == 200:
@@ -315,5 +315,5 @@ def logSubmit(setHostID, setMileStone):
     if __dev__ and not config.GetBool('dev-analyics', False):
         return None
 
-    print ':Userfunnel: use of logSubmit is deprecated; Please switch to add_event.'
+    print(':Userfunnel: use of logSubmit is deprecated; Please switch to add_event.')
     #base.funnel.add_to_event_queue(base.funnel.get_design_event(setHostID, setMileStone))
