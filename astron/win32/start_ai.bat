@@ -1,5 +1,5 @@
 @echo off
-title Pirates Online Rewritten - AI
+title Pirates Online Rewrite - AI
 cd ../../
 
 rem Get the user input:
@@ -8,13 +8,13 @@ set DISTRICT_NAME=DevHaven
 set /P BASE_CHANNEL=Base channel (DEFAULT: 401000000):  || ^
 set BASE_CHANNEL=401000000
 
-title Pirates Online Rewritten - AI (%DISTRICT_NAME%)
+title Pirates Online Rewrite - AI (%DISTRICT_NAME%)
 
 rem Choose correct python command to execute the game
 set PYTHON_CMD=ppython
 
 echo =============================================
-echo Starting Pirates Online Rewritten District...
+echo Starting Pirates Online Rewrite District...
 echo District Name: %DISTRICT_NAME%
 echo Base channel: %BASE_CHANNEL%
 echo ============================================
